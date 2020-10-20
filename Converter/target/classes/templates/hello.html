@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+		.tit{
+			padding:150px 35% 0px;
+			}
+		.input{
+			width:15%;
+<!--			padding:15px;-->
+			height:25px;
+			float:center;
+			margin:25px 40%;
+			}
+		.butt{
+			width:100%;
+			height:25px;
+<!--			padding:15px;-->
+<!--			float:center;-->
+			margin:25px 50%;
+			}
+	</style>
+    <title>Конвертер Валют</title>
+</head>
+<body>
+<p th:text="${massager}"></p>
+
+<div th:if="${param.error}">
+    Неверный логин или пароль.
+</div>
+<h1 class="input" th:inline="text">Добро пожаловать в конвертер валют!!!</h1>
+<form class="input" th:action="@{/hello}" method="post">
+    <div><label> Логин: <input type="text" name="username"/> </label></div>
+    <div><label> Пароль: <input type="password" name="password"/> </label></div>
+    <div><input class="butt" type="submit" value="Войти"/></div>
+</form>
+<form class="input" th:action="@{/registration}" method="get">
+    <div><input class="butt" type="submit" value="Регестрация"/></div>
+
+</form>
+</body>
+</html>

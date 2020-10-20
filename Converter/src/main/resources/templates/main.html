@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <style type="text/css">
+		.tit{
+			padding:150px 35% 0px;
+			}
+		.input{
+			width:15%;
+
+			float:center;
+			margin:2px 40%;
+			}
+		.butt{
+			width:55%;
+			height:20px;
+			margin:25px 30%;
+			}
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<h1 class="input" th:inline="text">Добро пожаловать в конвертер валют!!!</h1>
+<form  th:action="@{/}"  method="post">
+    <select class="input" th:name="bases">
+        <option th:each="base : ${bases}" th:value="${base.charCode}" th:text="${base.name}"></option>
+    </select>
+<!--    <div><label class="input">Российский рубль</label></div>-->
+    <div><input class="input" type="text" name="iValue"/> </div>
+<!--    <div>  <label class="input">RUR Рубли</label></div>-->
+    <div><label class="input">Российский рубль</label></div>
+    <div>  <label class="input" th:text="${needValue}"></label></div>
+    <p><input class="input" type="submit" value="Конвертировать"></p>
+</form>
+
+<form class="input" th:action="@{/download}" method="get">
+    <p> <input class="butt" type="submit" value="Скачать историю конвертаций"></p>
+</form>
+</body>
+</html>
