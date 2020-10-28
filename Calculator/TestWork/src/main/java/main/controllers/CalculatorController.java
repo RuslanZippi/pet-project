@@ -12,7 +12,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.scheduler.Schedulers;
 
 @RestController
-public class GreetingController {
+public class CalculatorController {
 
 
     @Autowired
