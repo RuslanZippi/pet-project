@@ -68,7 +68,6 @@ public class Calculate extends BaseSubscriber<Integer> {
                 return run(x, String.valueOf(index)).toString();
             }
             function = run(x, String.valueOf(index)).toString();
-            Thread.sleep(5 * 100);
             String time = String.valueOf(System.nanoTime() - start);
             return "Номер функции: #1" + ", Итерация: " + index + ", Время расчета " + time + ", Результат: " + function;
         } else {
@@ -78,7 +77,6 @@ public class Calculate extends BaseSubscriber<Integer> {
                 return run(x, String.valueOf(index2)).toString();
             }
             function = run(x, String.valueOf(index2)).toString();
-            Thread.sleep(10 * 100);
             String time = String.valueOf(System.nanoTime() - start);
             return "Номер функции: #2" + ", Итерация: " + index2 + ", Время расчета " + time + ", Результат: " + function;
         }
