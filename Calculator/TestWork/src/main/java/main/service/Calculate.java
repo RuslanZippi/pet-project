@@ -17,14 +17,11 @@ public class Calculate extends BaseSubscriber<Integer> {
     private int index = 0;
     private int index2 = 0;
 
-    private String check = "";
-    private String check2 = "";
-
-    private int repeatIndex = 1;
-    private String repeat = "";
+    private String first = "";
+    private String second = "";
 
 
-    public  Object run(String function, String param) {
+    public Object run(String function, String param) {
         ScriptEngineManager manager = new ScriptEngineManager();
         ScriptEngine engine = manager.getEngineByName("javascript");
         try {
@@ -34,49 +31,57 @@ public class Calculate extends BaseSubscriber<Integer> {
             Invocable inv = (Invocable) engine;
             return inv.invokeFunction(functionName, param);
         } catch (ScriptException e) {
-            return e.toString();
+            return "Exception: " + e.toString();
         } catch (NoSuchMethodException e) {
-            return e.toString();
+            return "Exception: " + e.toString();
         }
     }
 
-    private  String getFunctionName(String function){
+    private String getFunctionName(String function) {
         String s[] = function.split(" ");
-        String name = s[1].replaceAll("\\(.+","");
+        String name = s[1].replaceAll("\\(.+", "");
         return name;
     }
 
-    @SneakyThrows
-    public String call(String x,String param) {
-        String answer = "";
+    public void clear() {
+        index = 0;
+        index2 = 0;
+        first = "";
+        second = "";
+    }
 
-        if (check.equals("")) {
-            check = x;
-            index++;
-            long start = System.nanoTime();
-            String result = x + 1;
-            String function = run(x,param).toString();
-            Thread.sleep(1000);
-            String time = String.valueOf(System.nanoTime() - start);
-            return "Номер функции: " + x + ", Итерация: " + index + ", Время расчета " + time + ", Результат: " + function;
+    @SneakyThrows
+    public String call(String x) {
+        String function;
+        if (first.equals("")) {
+            first = x;
         }
-        if (check.equals(x)) {
+        if (!first.equals("") && !first.equals(x)) {
+            second = x;
+
+        }
+
+        if (first.equals(x)) {
             index++;
             long start = System.nanoTime();
-            String result = x + 1;
-            String function = run(x,param).toString();
-            Thread.sleep(1000);
+            if (run(x, String.valueOf(index)).toString().contains("Exception")) {
+                return run(x, String.valueOf(index)).toString();
+            }
+            function = run(x, String.valueOf(index)).toString();
+            Thread.sleep(5 * 100);
             String time = String.valueOf(System.nanoTime() - start);
-            return "Номер функции: " + x + ", Итерация: " + index + ", Время расчета " + time + ", Результат: " + function;
+            return "Номер функции: #1" + ", Итерация: " + index + ", Время расчета " + time + ", Результат: " + function;
         } else {
-            check2 = x;
             index2++;
             long start = System.nanoTime();
-            String result = x + 1;
-            String function = run(x,param).toString();
-            Thread.sleep(1000);
+            if (run(x, String.valueOf(index2)).toString().contains("Exception")) {
+                return run(x, String.valueOf(index2)).toString();
+            }
+            function = run(x, String.valueOf(index2)).toString();
+            Thread.sleep(10 * 100);
             String time = String.valueOf(System.nanoTime() - start);
-            return "Номер функции: " + x + ", Итерация: " + index2 + ", Время расчета " + time + ", Результат: " + function;
+            return "Номер функции: #2" + ", Итерация: " + index2 + ", Время расчета " + time + ", Результат: " + function;
         }
+
     }
 }
