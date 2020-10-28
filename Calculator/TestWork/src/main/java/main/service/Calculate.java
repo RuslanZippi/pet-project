@@ -21,7 +21,7 @@ public class Calculate extends BaseSubscriber<Integer> {
     private String second = "";
 
 
-    public Object run(String function, String param) {
+    private Object run(String function, String param) {
         ScriptEngineManager manager = new ScriptEngineManager();
         ScriptEngine engine = manager.getEngineByName("javascript");
         try {
