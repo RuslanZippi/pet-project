@@ -17,7 +17,7 @@
 			margin:30px 40%;
 			}
 		.mainButt{
-        text-decoration: none;
+text-decoration: none;
          outline: none;
          display: inline-block;
          color: white;
@@ -88,30 +88,10 @@
   line-height: 1;
 }
         .textLabel{
-        position: absolute;
-        left: 70px;
-        width: 150px;
-        border-radius: 5px;
-        font-family: 'Merriweather';
-        }
-        .textLabel0{
-        position: absolute;
-        left: 70px;
-        width: 150px;
         border-radius: 5px;
         font-family: 'Merriweather';
         }
         .textLabel1{
-        position: relative;
-        top:20%;
-        border-radius: 5px;
-        font-family: "Times New Roman";
-        font-weight: 1000;
-        color: rgb(0,0,220);
-        }
-        .textLabel2{
-        position: absolute;
-        top:14%;
         border-radius: 5px;
         font-family: "Times New Roman";
         font-weight: 1000;
@@ -125,26 +105,6 @@
         font-size: 30px;
         color: red;
         }
-
-        .logout{
-        position: absolute;
-        left: 16%;
-        top: 1.6%;
-        text-decoration: none;
-         outline: none;
-         display: inline-block;
-         color: white;
-         padding: 10px 30px;
-         margin: 10px 20px;
-         border-radius: 10px;
-         font-family: 'Montserrat', sans-serif;
-         text-transform: uppercase;
-         letter-spacing: 2px;
-         background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 51%, #9EEFE1 100%);
-         background-size: 200% auto;
-         box-shadow: 0 0 20px rgba(0, 0, 0, .1);
-         transition: .5s;
-        }
 	</style>
     <title>Конвертер Валют</title>
 </head>
@@ -155,17 +115,13 @@
     <p class="error">Некорректные данный</p>
 </div>
 <div class="button">
-    <a href="/" class="mainButt">Главная</a><a href="/history" class="mainButt">История</a>
+    <a href="/" class="mainButt">Главная</a><a href="/history" class="mainButt">История</a><a href="/logout" class="mainButt">Выйти</a>
 </div>
-
-<form  th:action="@{/logout}" method="post">
-    <a href="/logout" class="logout">Выйти</a>
-</form>
 
 <div class="one"><h1>Конвертер Валют</h1></div>
 <form class="input" th:action="@{/hello}" method="post">
-    <div><label class="textLabel1"> Логин: <input class="textLabel0" type="text" name="username"/></label></div>
-    <div><label class="textLabel2"> Пароль: <input class="textLabel" type="password" name="password"/></label></div>
+    <div><label class="textLabel1"> Логин: <input class="textLabel" type="text" name="username"/></label></div>
+    <div><label class="textLabel1"> Пароль: <input class="textLabel" type="password" name="password"/></label></div>
     <div><input class="butt1" type="submit" value="Войти"/></div>
 </form>
 <form class="input" th:action="@{/registration}" method="get">

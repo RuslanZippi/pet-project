@@ -8,11 +8,9 @@
 			padding:150px 35% 0px;
 			}
 		.input{
-			width:15%;
-<!--			padding:15px;-->
-			height:25px;
-			float:center;
-			margin:25px 40%;
+		position: absolute;
+		top: 8%;
+			margin:30px 40%;
 			}
 		.butt{
 <!--			width:100%;-->
@@ -21,20 +19,86 @@
 			float:center;
 			margin:25px 45%;
 			}
+
+			.one h1 {
+
+  font-family: 'Righteous', cursive;
+  position: absolute;
+  top: 10px;
+  left: 40%;
+  color: #3CA1D9;
+  display: inline-block;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  font-size: 3em;
+  padding: 20px 60px;
+  margin: 0;
+  line-height: 1;
+}
+
+.textLabel{
+        border-radius: 5px;
+        font-family: 'Merriweather';
+        }
+        .textLabel1{
+        border-radius: 5px;
+        font-family: "Times New Roman";
+        font-weight: 1000;
+        color: rgb(0,0,220);
+        }
+
+        .butt{
+		position: absolute;
+		left:15%;
+			top:25px;
+			height:25px;
+
+			text-decoration: none;
+         outline: none;
+         display: inline-block;
+         color: white;
+
+         border-radius: 10px;
+         font-family: 'Montserrat', sans-serif;
+         text-transform: uppercase;
+         letter-spacing: 2px;
+         background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 51%, #9EEFE1 100%);
+         background-size: 100% auto;
+         box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+         transition: .5s;
+			}
+
+			.textLabel{
+        position: absolute;
+        left: 70px;
+        width: 150px;
+        border-radius: 5px;
+        font-family: 'Merriweather';
+        }
+        .textLabel0{
+        position: absolute;
+        left: 70px;
+        width: 150px;
+        border-radius: 5px;
+        font-family: 'Merriweather';
+        }
+        .textLabel2{
+        position: absolute;
+        top:25px;
+        border-radius: 5px;
+        font-family: "Times New Roman";
+        font-weight: 1000;
+        color: rgb(0,0,220);
+        }
 	</style>
     <title>Spring Security Example </title>
 </head>
 <body>
-<!--<div th:if="${param.error}">-->
-<!--    Invalid username and password.-->
-<!--</div>-->
-<!--<div th:if="${param.logout}">-->
-<!--    You have been logged out.-->
-<!--</div>-->
+<div class="one" ><h1>Конвертер Валют</h1></div>
 <form class="input" th:action="@{/registration}" method="post">
-    <div><label> Логин : <input type="text" name="username"/> </label></div>
-    <div><label> Пароль: <input type="password" name="userpassword"/> </label></div>
-    <div><input type="submit" value="Зарегестрироваться"/></div>
+    <div><label class="textLabel1"> Логин : <input class="textLabel" type="text" name="username"/> </label></div>
+    <div><label class="textLabel2"> Пароль: <input class="textLabel0" type="password" name="userpassword"/> </label></div>
+    <div><input class="butt" type="submit" value="Зарегестрироваться"/></div>
 </form>
 </body>
 </html>

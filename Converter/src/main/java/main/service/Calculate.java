@@ -16,6 +16,6 @@ public class Calculate {
         float intIValue = Float.parseFloat(iValue);
 
         float result = intIValue * intValue;
-        return String.valueOf(result);
+        return String.valueOf("<" + result + ">");
     }
 }

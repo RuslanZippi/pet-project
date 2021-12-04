@@ -38,7 +38,7 @@ public class FileService {
         Iterable<HistoryBase> historyBases = historyRep.findAllByUser(user);
         String row;
 
-        String firstRow = "Дата" + "\t" + "\t" + "Покупка" + "\t" + "\t" + "Продажа" + "\t" + "\t" + "Количество покупки" + "\t" + "\t" + "Количество продажи" + "\n";
+        String firstRow = "Дата" + "\t" + "\t" + "\t" + "Покупка" + "\t" + "\t" + "Продажа" + "\t" + "\t" + "Количество покупки" + "\t" + "\t" + "Количество продажи" + "\n";
         fileWriter.write(firstRow);
         for (HistoryBase base : historyBases) {
             row = base.getDate() + "\t" + "\t"

@@ -37,8 +37,6 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private Set<Role> roles;
 
-//    @OneToMany(mappedBy = "date")
-//    private Set<HistoryBase> baseSet;
 
 
 

@@ -6,23 +6,145 @@
 <head>
     <meta charset="UTF-8">
     <style type="text/css">
+    body {
+         background: #d6eaf8;
+      }
 		.tit{
 			padding:150px 35% 0px;
 			}
 		.input{
-			width:15%;
-<!--			padding:15px;-->
+
+			margin:30px 40%;
+			}
+		.mainButt{
+        text-decoration: none;
+         outline: none;
+         display: inline-block;
+         color: white;
+         padding: 10px 30px;
+         margin: 10px 20px;
+         border-radius: 10px;
+         font-family: 'Montserrat', sans-serif;
+         text-transform: uppercase;
+         letter-spacing: 2px;
+         background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 51%, #9EEFE1 100%);
+         background-size: 200% auto;
+         box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+         transition: .5s;
+			}
+			.butt1{
+		position: absolute;
+		left:40%;
+			top:200px;
 			height:25px;
-			float:center;
-			margin:25px 40%;
+
+			text-decoration: none;
+         outline: none;
+         display: inline-block;
+         color: white;
+
+         border-radius: 10px;
+         font-family: 'Montserrat', sans-serif;
+         text-transform: uppercase;
+         letter-spacing: 2px;
+         background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 51%, #9EEFE1 100%);
+         background-size: 100% auto;
+         box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+         transition: .5s;
 			}
 		.butt{
-			width:100%;
+		position: absolute;
+		left:45%;
+			top:200px;
 			height:25px;
-<!--			padding:15px;-->
-<!--			float:center;-->
-			margin:25px 50%;
+
+			text-decoration: none;
+         outline: none;
+         display: inline-block;
+         color: white;
+
+         border-radius: 10px;
+         font-family: 'Montserrat', sans-serif;
+         text-transform: uppercase;
+         letter-spacing: 2px;
+         background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 51%, #9EEFE1 100%);
+         background-size: 100% auto;
+         box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+         transition: .5s;
 			}
+			.one h1 {
+
+  font-family: 'Righteous', cursive;
+  position: absolute;
+  top: 10px;
+  left: 40%;
+  color: #3CA1D9;
+  display: inline-block;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  font-size: 3em;
+  padding: 20px 60px;
+  margin: 0;
+  line-height: 1;
+}
+        .textLabel{
+        position: absolute;
+        left: 70px;
+        width: 150px;
+        border-radius: 5px;
+        font-family: 'Merriweather';
+        }
+        .textLabel0{
+        position: absolute;
+        left: 70px;
+        width: 150px;
+        border-radius: 5px;
+        font-family: 'Merriweather';
+        }
+        .textLabel1{
+        position: relative;
+        top:20%;
+        border-radius: 5px;
+        font-family: "Times New Roman";
+        font-weight: 1000;
+        color: rgb(0,0,220);
+        }
+        .textLabel2{
+        position: absolute;
+        top:14%;
+        border-radius: 5px;
+        font-family: "Times New Roman";
+        font-weight: 1000;
+        color: rgb(0,0,220);
+        }
+        .error{
+        position: absolute;
+        top: 250px;
+        left: 40%;
+        font-weight: 1000;
+        font-size: 30px;
+        color: red;
+        }
+
+        .logout{
+        position: absolute;
+        left: 16%;
+        top: 1.6%;
+        text-decoration: none;
+         outline: none;
+         display: inline-block;
+         color: white;
+         padding: 10px 30px;
+         margin: 10px 20px;
+         border-radius: 10px;
+         font-family: 'Montserrat', sans-serif;
+         text-transform: uppercase;
+         letter-spacing: 2px;
+         background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 51%, #9EEFE1 100%);
+         background-size: 200% auto;
+         box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+         transition: .5s;
+        }
 	</style>
     <title>Конвертер Валют</title>
 </head>
@@ -30,13 +152,21 @@
 <p th:text="${massager}"></p>
 
 <div th:if="${param.error}">
-    Неверный логин или пароль.
+    <p class="error">Некорректные данный</p>
 </div>
-<h1 class="input" th:inline="text">Добро пожаловать в конвертер валют!!!</h1>
+<div class="button">
+    <a href="/" class="mainButt">Главная</a><a href="/history" class="mainButt">История</a>
+</div>
+
+<form  th:action="@{/logout}" method="post">
+    <a href="/logout" class="logout">Выйти</a>
+</form>
+
+<div class="one"><h1>Конвертер Валют</h1></div>
 <form class="input" th:action="@{/hello}" method="post">
-    <div><label> Логин: <input type="text" name="username"/> </label></div>
-    <div><label> Пароль: <input type="password" name="password"/> </label></div>
-    <div><input class="butt" type="submit" value="Войти"/></div>
+    <div><label class="textLabel1"> Логин: <input class="textLabel0" type="text" name="username"/></label></div>
+    <div><label class="textLabel2"> Пароль: <input class="textLabel" type="password" name="password"/></label></div>
+    <div><input class="butt1" type="submit" value="Войти"/></div>
 </form>
 <form class="input" th:action="@{/registration}" method="get">
     <div><input class="butt" type="submit" value="Регестрация"/></div>

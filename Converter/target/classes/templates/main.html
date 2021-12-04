@@ -7,17 +7,117 @@
 		.tit{
 			padding:150px 35% 0px;
 			}
+		.inCourse{
+		    width:15%;
+			float:center;
+			margin:45px 40%;
+		    font-family: "Times New Roman";
+            font-weight: 1000;
+            color: rgb(0,0,220);
+            }
 		.input{
 			width:15%;
 
 			float:center;
-			margin:2px 40%;
+			margin:45px 40%;
 			}
+
+		.input1{
+			width:5%;
+            border-radius: 5px;
+			float:center;
+			margin:15px 40%;
+			}
+
 		.butt{
 			width:55%;
 			height:20px;
 			margin:25px 30%;
 			}
+	    .one h1 {
+              font-family: 'Righteous', cursive;
+              position: absolute;
+              top: 10px;
+              left: 40%;
+              color: #3CA1D9;
+              display: inline-block;
+              border-top: 2px solid;
+              border-bottom: 2px solid;
+              font-size: 3em;
+              padding: 20px 60px;
+              margin: 0;
+              line-height: 1;
+            }
+        .mainButt{
+             text-decoration: none;
+             outline: none;
+             display: inline-block;
+             color: white;
+             padding: 10px 30px;
+             margin: 10px 20px;
+             border-radius: 10px;
+             font-family: 'Montserrat', sans-serif;
+             text-transform: uppercase;
+             letter-spacing: 2px;
+             background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 51%, #9EEFE1 100%);
+             background-size: 200% auto;
+             box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+             transition: .5s;
+			}
+		.textLabel1{
+		    position: absolute;
+		    top: 19.7%;
+		    left: 47%;
+            font-family: "Times New Roman";
+            font-weight: 1000;
+            color: rgb(0,0,220);
+        }
+        .textLabel2{
+		    position: absolute;
+		    top: 19.7%;
+		    left: 55%;
+            font-family: "Times New Roman";
+            font-weight: 1000;
+            color: rgb(0,0,220);
+        }
+        .butt{
+		position: absolute;
+		left:10%;
+		top:200px;
+		width: 15%;
+		text-decoration: none;
+         outline: none;
+         display: inline-block;
+         color: white;
+         border-radius: 10px;
+         font-family: 'Montserrat', sans-serif;
+         text-transform: uppercase;
+         letter-spacing: 2px;
+         background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 51%, #9EEFE1 100%);
+         background-size: 100% auto;
+         box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+         transition: .5s;
+			}
+			.butt1{
+		position: absolute;
+		left:40%;
+		top:250px;
+		width: 15%;
+		text-decoration: none;
+         outline: none;
+         display: inline-block;
+         color: white;
+         border-radius: 10px;
+         font-family: 'Montserrat', sans-serif;
+         text-transform: uppercase;
+         letter-spacing: 2px;
+         background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 51%, #9EEFE1 100%);
+         background-size: 100% auto;
+         box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+         transition: .5s;
+			}
+
+
 
     </style>
     <meta charset="UTF-8">
@@ -25,21 +125,19 @@
 
 </head>
 <body>
-<h1 class="input" th:inline="text">Добро пожаловать в конвертер валют!!!</h1>
+<div class="one"><h1>Конвертер Валют</h1></div>
+<div class="button">
+    <a href="/" class="mainButt">Главная</a><a href="/history" class="mainButt">История</a><a href="/logout" class="mainButt">Выйти</a>
+</div>
 <form  th:action="@{/}"  method="post">
-    <select class="input" th:name="bases">
+    <select class="inCourse" th:name="bases">
         <option th:each="base : ${bases}" th:value="${base.charCode}" th:text="${base.name}"></option>
     </select>
-<!--    <div><label class="input">Российский рубль</label></div>-->
-    <div><input class="input" type="text" name="iValue"/> </div>
-<!--    <div>  <label class="input">RUR Рубли</label></div>-->
-    <div><label class="input">Российский рубль</label></div>
-    <div>  <label class="input" th:text="${needValue}"></label></div>
-    <p><input class="input" type="submit" value="Конвертировать"></p>
+    <div><input class="input1" type="text" name="iValue"/> </div>
+    <div><label class="textLabel1">Российский рубль</label></div>
+    <div>  <label class="textLabel2" th:text="${needValue}"></label></div>
+    <p><input class="butt" type="submit" value="Конвертировать"></p>
 </form>
 
-<form class="input" th:action="@{/download}" method="get">
-    <p> <input class="butt" type="submit" value="Скачать историю конвертаций"></p>
-</form>
 </body>
 </html>

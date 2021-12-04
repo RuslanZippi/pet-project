@@ -42,6 +42,6 @@ public class RegistrationController {
         user.setHashPassword(passwordEncoder.encode(userPassword));
         user.setRoles(Collections.singleton(Role.USER));
         userRep.save(user);
-        return "redirect:/";
+        return "redirect:/hello";
     }
 }
