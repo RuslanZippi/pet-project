@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animationCache="false"
+    android:background="@drawable/back"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="174dp"
+        android:layout_marginTop="313dp"
+        android:layout_marginEnd="179dp"
+        android:layout_marginBottom="399dp"
+        android:text="@string/textview1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/clickButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="178dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="178dp"
+        android:layout_marginBottom="267dp"
+        android:backgroundTint="#C86161"
+        android:contentDescription="TODO"
+        android:tint="#673AB7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:srcCompat="@android:drawable/ic_menu_mylocation"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/MainButton"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="600dp"
+        android:alpha="0.25"
+        android:background="@drawable/button_oval"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/buttonLeft"
+        android:layout_width="78dp"
+        android:layout_height="79dp"
+        android:alpha="1"
+        android:background="@drawable/calen"
+        app:layout_constraintCircle="@+id/MainButton"
+        app:layout_constraintCircleAngle="300"
+        app:layout_constraintCircleRadius="120dp"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteX="105dp"
+        tools:layout_editor_absoluteY="482dp" />
+
+    <ImageButton
+        android:id="@+id/buttonRight"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/imz2wqqlbcq"
+        app:layout_constraintCircle="@+id/MainButton"
+        app:layout_constraintCircleAngle="60"
+        app:layout_constraintCircleRadius="120dp"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteX="301dp"
+        tools:layout_editor_absoluteY="540dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
