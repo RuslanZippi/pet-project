@@ -17,7 +17,7 @@ public class ParseWeather {
         URLConnection connection = url.openConnection();
         Scanner scanner = new Scanner(connection.getInputStream());
         scanner.useDelimiter("\\Z");
-        Pattern p = Pattern.compile("class='weather__temp'>[\\D][0-9].");
+        Pattern p = Pattern.compile("class='weather__temp'>.[0-9]+");
         Matcher matcher = p.matcher(scanner.next());
         if (matcher.find()){
             temperature = matcher.group().split("[>]")[1];
