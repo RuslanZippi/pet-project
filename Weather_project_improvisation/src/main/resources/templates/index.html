@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <style type="text/css">
+        .title h1{
+            font-family: 'Righteous', cursive;
+              position: absolute;
+              top: 10px;
+              left: 40%;
+              color: #AAA1D9;
+        }
+        .mainText {
+        font-family: 'Righteous', cursive;
+              position: absolute;
+              top: 150px;
+              left: 30%;
+              color: #3CA1D9;
+              font-size: 15pt;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Weather</title>
+    <div class="title"><h1>Weather</h1></div>
+    <p th:text=" 'Weather today: ' + ${temperature}" class="mainText"></p>
+
+</head>
+<body>
+
+</body>
+</html>
