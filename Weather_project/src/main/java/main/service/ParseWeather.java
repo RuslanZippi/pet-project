@@ -11,18 +11,18 @@ import java.util.regex.Pattern;
 
 @Service
 public class ParseWeather {
-    private  String temperature;
-     public String getTemperature() throws IOException {
+    private String temperature;
+
+    public String getTemperature() throws IOException {
         URL url = new URL("https://yandex.ru");
         URLConnection connection = url.openConnection();
         Scanner scanner = new Scanner(connection.getInputStream());
         scanner.useDelimiter("\\Z");
         Pattern p = Pattern.compile("class='weather__temp'>[\\D0-9]+");
         Matcher matcher = p.matcher(scanner.next());
-        if (matcher.find()){
-            temperature = matcher.group().split("[>]")[1];
-        }
-        else {
+        if (matcher.find()) {
+            temperature = matcher.group().split("[>]")[1].split("[<]")[0];
+        } else {
             temperature = "Not found temperature";
         }
         return temperature;

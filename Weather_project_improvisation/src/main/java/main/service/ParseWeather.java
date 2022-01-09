@@ -23,7 +23,7 @@ public class ParseWeather {
         Pattern p = Pattern.compile("class='weather__temp'>[\\D0-9]+");
         Matcher matcher = p.matcher(scanner.next());
         if (matcher.find()) {
-            temperature = matcher.group().split("[>]")[1];
+            temperature = matcher.group().split("[>]")[1].split("[<]")[0];
 
             logger.info(matcher.group());
             logger.info(temperature);

@@ -23,10 +23,10 @@ public class WeatherDataService {
         String temperature = "";
         Weather weather = weatherRep.findByWeatherDate(Date.valueOf(LocalDateTime.now().toLocalDate()));
 
-        logger.info(weather.toString());
 
         if (weather == null) {
             weather = new Weather();
+            logger.info(weather.toString());
             try {
                 temperature = parseWeather.getTemperature();
                 weather.setWeatherValue(temperature);
