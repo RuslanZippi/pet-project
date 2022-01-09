@@ -20,6 +20,7 @@ public class DefaultController {
     @GetMapping
     public String main(Model model){
         model.addAttribute("temperature",weatherDataService.getTemperatureInBd());
+        model.addAttribute("date", weatherDataService.getDate());
         logger.info(model.toString());
 
         return "index";

@@ -8,12 +8,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Weather_project" />
+        <module name="Weather_project_improvisation" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Weather_project" options="-parameters" />
+      <module name="Weather_project_improvisation" options="-parameters" />
     </option>
   </component>
 </project>

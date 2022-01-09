@@ -17,11 +17,12 @@
               color: #3CA1D9;
               font-size: 15pt;
         }
+
     </style>
     <meta charset="UTF-8">
     <title>Weather</title>
     <div class="title"><h1>Weather</h1></div>
-    <p th:text=" 'Weather today: ' + ${temperature}" class="mainText"></p>
+    <p th:text=" 'Weather today (' + ${date} + '): '+ ${temperature}" class="mainText"></p>
 
 </head>
 <body>

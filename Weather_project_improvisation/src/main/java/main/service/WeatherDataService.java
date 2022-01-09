@@ -49,6 +49,10 @@ public class WeatherDataService {
         }
         return temperature;
     }
+    public String getDate(){
+        Weather weather = weatherRep.findByWeatherDate(Date.valueOf(LocalDateTime.now().toLocalDate()));
+        return weather.getWeatherDate().toString();
+    }
 
 
 }
